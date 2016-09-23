@@ -1,0 +1,22 @@
+smgr:
+  build: hosta
+  environment:
+    VIRTUAL_HOST: hosta
+  restart: always
+
+dev:
+  build: hostb
+  environment:
+    VIRTUAL_HOST: hostb
+  restart: always
+
+nginx-proxy:
+  image: jwilder/nginx-proxy
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  restart: always
+  privileged: true
