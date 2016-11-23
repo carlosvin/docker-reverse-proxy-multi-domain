@@ -1,13 +1,13 @@
-smgr:
-  build: hosta
+a:
+  build: a
   environment:
-    VIRTUAL_HOST: hosta
+    VIRTUAL_HOST: a.domain.com
   restart: always
 
-dev:
-  build: hostb
+b:
+  build: b
   environment:
-    VIRTUAL_HOST: hostb
+    VIRTUAL_HOST:  b.domain.com
   restart: always
 
 nginx-proxy:
